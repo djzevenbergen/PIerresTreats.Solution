@@ -26,7 +26,7 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Back home", "/")</p>
+<p>@Html.ActionLink("Back home", "Index", "Home")</p>
 <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
 <p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
-<p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.BookId })</p>
+<p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>

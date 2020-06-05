@@ -8,9 +8,10 @@
 
 @* @model List<Library.Models.Book>; *@
 
-<h1>Welcome to Pierre's!</h1>
+@* <h1>Welcome to Pierre's!</h1> *@
 
-
+  <p>@Html.ActionLink("Add Flavor", "Create", "Flavors")</p>
+  <p>@Html.ActionLink("Add Treat", "Create", "Treats")</p>
 
 @if (Model["flavors"].Count == 0 && Model["treats"].Count == 0)
 {
@@ -72,5 +73,5 @@ else
     }
     </ul>
   </div>
-  
+
 }

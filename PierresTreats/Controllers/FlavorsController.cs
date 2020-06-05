@@ -29,7 +29,7 @@ namespace PierresTreats.Controllers
     {
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
     public ActionResult Details(int id)
     {
@@ -51,7 +51,7 @@ namespace PierresTreats.Controllers
     {
       _db.Entry(flavor).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Delete(int id)
@@ -66,7 +66,7 @@ namespace PierresTreats.Controllers
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       _db.Flavors.Remove(thisFlavor);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
   }
 }
