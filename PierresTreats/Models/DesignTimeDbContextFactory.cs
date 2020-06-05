@@ -19,7 +19,7 @@ namespace PierresTreats.Models
 
       builder.UseMySql(connectionString);
 
-      return new LibraryContext(builder.Options);
+      return new PierresTreatsContext(builder.Options);
     }
   }
 }

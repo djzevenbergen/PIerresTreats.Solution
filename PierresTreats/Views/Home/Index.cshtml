@@ -3,7 +3,7 @@
   Layout = "_Layout";
 }
 
-@using Library.Models;
+@using PierresTreats.Models;
 @using System.Collections.Generic;
 
 @* @model List<Library.Models.Book>; *@
@@ -34,7 +34,7 @@ else if (Model["flavors"].Count == 0)
     <ul>
     @foreach (Treat treat in Model["treats"])
     {
-      <li>@Html.ActionLink($"{treat.name} " , "Details", "Treats", new {id = treat.TreatId})</li>
+      <li>@Html.ActionLink($"{treat.Name} " , "Details", "Treats", new {id = treat.TreatId})</li>
     }
     </ul>
   </div>
@@ -45,7 +45,7 @@ else if (Model["treats"].Count == 0)
     <ul>
     @foreach (Flavor flavor in Model["flavors"])
     {
-      <li>@Html.ActionLink($"{flavor.name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
+      <li>@Html.ActionLink($"{flavor.Name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
     }
     </ul>
   </div>
@@ -60,7 +60,7 @@ else
     <ul>
     @foreach (Flavor flavor in Model["flavors"])
     {
-      <li>@Html.ActionLink($"{flavor.name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
+      <li>@Html.ActionLink($"{flavor.Name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
     }
     </ul>
   </div>
@@ -68,7 +68,7 @@ else
     <ul>
     @foreach (Treat treat in Model["treats"])
     {
-      <li>@Html.ActionLink($"{treat.name} " , "Details", "Treats", new {id = treat.TreatId})</li>
+      <li>@Html.ActionLink($"{treat.Name} " , "Details", "Treats", new {id = treat.TreatId})</li>
     }
     </ul>
   </div>
