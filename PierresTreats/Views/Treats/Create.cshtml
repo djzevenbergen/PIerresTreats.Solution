@@ -14,9 +14,6 @@
     @Html.LabelFor(model => model.Type)
     @Html.TextBoxFor(model => model.Type)
 
-    @Html.Label("Select Flavor")
-    @Html.DropDownList("FlavorId")
-
     <input type="submit" value="Add new treat" class="btn btn-default" />
 }
-<p>@Html.ActionLink("Home", "/")</p>
+<p>@Html.ActionLink("Back home", "Index", "Home")</p>

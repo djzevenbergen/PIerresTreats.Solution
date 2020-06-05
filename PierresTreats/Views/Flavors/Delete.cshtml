@@ -2,21 +2,13 @@
   Layout = "_Layout";
 }
 
-@using PierresTreats.Models;
-@model List<PierresTreats.Models.Flavor>;
+@model PierresTreats.Models.Flavor
 
-<h1>Flavors</h1>
+<h2>Are you sure you want to delete this?</h2>
 
-@if (@Model.Count == 0)
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
 {
-  <h3>No flavors have been added yet!</h3>
-} 
-
-@foreach (Flavor flavor in Model)
-{
-  <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+    <input type="submit" value="Delete" />
 }
-
-<p>@Html.ActionLink("Add new flavor", "Create")</p>
-
-<p>@Html.ActionLink("Back home", "Index", "Home")</p>
+@Html.ActionLink("Back Home", "Index", "Home")

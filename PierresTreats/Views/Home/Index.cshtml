@@ -32,6 +32,7 @@ else if (Model["flavors"].Count == 0)
     <p> No flavors yet!</p>
   </div>
   <div class="col-m-6">
+    <h3>Treats:</h3>
     <ul>
     @foreach (Treat treat in Model["treats"])
     {
@@ -44,6 +45,7 @@ else if (Model["treats"].Count == 0)
 {
   <div class="col-m-6">
     <ul>
+      <h3>Flavors:</h3>
     @foreach (Flavor flavor in Model["flavors"])
     {
       <li>@Html.ActionLink($"{flavor.Name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
@@ -58,6 +60,7 @@ else if (Model["treats"].Count == 0)
 else 
 {
   <div class="col-m-6">
+    <h3>Flavors:</h3>
     <ul>
     @foreach (Flavor flavor in Model["flavors"])
     {
@@ -66,6 +69,7 @@ else
     </ul>
   </div>
     <div class="col-m-6">
+    <h3>Treats:</h3>
     <ul>
     @foreach (Treat treat in Model["treats"])
     {
