@@ -139,7 +139,7 @@ namespace PierresTreats.Controllers
         if (searchParam == "Treat")
         {
           var model = from m in _db.Treats select m;
-          model = model.Where(n => n.Title.Contains(search));
+          model = model.Where(n => n.Name.Contains(search));
           List<Treat> matchesTreat = new List<Treat> { };
           matchesTreat = model.ToList();
           return View(matchesTreat);
