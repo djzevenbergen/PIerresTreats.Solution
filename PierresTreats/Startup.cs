@@ -31,7 +31,8 @@ namespace PierresTreats
 
       services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddEntityFrameworkStores<PierresTreatsContext>()
-        .AddDefaultTokenProviders();
+        .AddDefaultTokenProviders()
+        .AddRoles<IdentityRole>();
 
       services.Configure<IdentityOptions>(options =>
       {

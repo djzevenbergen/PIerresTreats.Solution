@@ -9,3 +9,9 @@ body
   text-align: center;
   background-color: lightcoral ;
 }
+
+li
+{
+  list-style-type: none;
+  text-indent: 0%;
+}
