@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Library.Controllers
+namespace PierresTreats.Controllers
 {
   public class HomeController : Controller
   {
