@@ -1,6 +1,6 @@
-# _Hair Salon_
+# _Pierres Treats_
 
-#### _MVC application for keeping track of hair stylists and their clients. 5/29/2020_
+#### _MVC application for keeping track of treats and their flavors. 5/29/2020_
 
 ### Made by DJ Zevenbergen
 
@@ -13,49 +13,22 @@ _This C#/.NET Core MVC application uses a MySQL database to allow the user to ad
 * Clone repository from GitHub in terminal or console
 * ensure that C#/.netcore2.2 is installed on your computer
 * ensure that mysql is installed on your computer
-* if you have mysql workbench, use administration>Data import/restore>import from self-contained file>PierresTreats.Solution/david_zevenbergen.sql>start import
-* if you don't have mysql workbench, here are the create statements:
-
-
-        CREATE DATABASE `david_zevenbergen` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
-        
-        USE david_zevenbergen;
-        
-        CREATE TABLE `clients` (
-          `ClientId` int(11) NOT NULL AUTO_INCREMENT,
-          `FirstName` varchar(45) DEFAULT NULL,
-          `LastName` varchar(45) DEFAULT NULL,
-          `PhoneNumber` varchar(15) DEFAULT NULL,
-          `StylistId` int(11) NOT NULL,
-          PRIMARY KEY (`ClientId`),
-          KEY `StylistId_idx` (`StylistId`),
-          CONSTRAINT `StylistId` FOREIGN KEY (`StylistId`) REFERENCES `stylists` (`StylistId`) ON DELETE CASCADE
-        ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-        CREATE TABLE `stylists` (
-          `StylistId` int(11) NOT NULL AUTO_INCREMENT,
-          `FirstName` varchar(45) DEFAULT 'null',
-          `LastName` varchar(45) DEFAULT 'null',
-          `PhoneNumber` varchar(45) DEFAULT 'null',
-          PRIMARY KEY (`StylistId`)
-        ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
-
-
-* create a file named "appsettings.json" in the HairSalon folder
+* create a file named "appsettings.json" in the PierresTreats folder
 * populate appsettings.json with the following text (making sure you use your port number, uid, and password):
 
-        {
-          "ConnectionStrings": {
-            "DefaultConnection": "Server=localhost;Port={your default port number here!};database=david_zevenbergen;uid={your mysql userid here!};pwd={your password for mysql here!};"
-          }
-        }
+  {
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=david_zevenbergen;uid=root;pwd=epicodus;",
+      "LibraryContextConnection": "Server=(localdb)\\mssqllocaldb;Database=david_zevenbergen;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
 
 * in the terminal navigate to the project's root directory
 * use "dotnet restore PierresTreats"
 * navigate into PierresTreats folder "cd PierresTreats"
-* to start the application use "dotnet run"
+* ensure that the program builds by running "dotnet build"
+* to start the database use  "dotnet ef database update"
+* to start the program use "dotnet run"
 
 ## Specs
 1. User is presented with a homepage, and sees a table of all flavors and treats.
@@ -93,7 +66,7 @@ _This C#/.NET Core MVC application uses a MySQL database to allow the user to ad
   * Input: "Add Treat"
   * Output: "/treats/create"
 6. User fills out a Treat form and is then redirected to the home page" 
-  * Input: "Eclair" "Chocolate" "$2.00"
+  * Input: "Eclair" "Chocolate"
   * Output: "/"
 
 7. User can search for Flavors or Treats

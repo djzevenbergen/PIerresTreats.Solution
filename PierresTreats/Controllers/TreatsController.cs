@@ -52,6 +52,7 @@ namespace PierresTreats.Controllers
           .Include(treat => treat.Flavors)
           .ThenInclude(join => join.Flavor)
           .FirstOrDefault(treat => treat.TreatId == id);
+
       return View(thisTreat);
     }
 
