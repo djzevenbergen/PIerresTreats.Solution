@@ -10,7 +10,6 @@ namespace PierresTreats.Models
     }
     public int TreatId { get; set; }
     public string Name { get; set; }
-    public string Type { get; set; }
     public virtual ApplicationUser User { get; set; }
     public ICollection<FlavorTreat> Flavors { get; set; }
   }

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
-
-//new using directives
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
@@ -27,15 +25,6 @@ namespace PierresTreats.Controllers
       _db = db;
     }
 
-    // //updated Index method
-    // public ActionResult Index()
-    // {
-    //   // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   // var currentUser = await _userManager.FindByIdAsync(userId);
-    //   // var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
-    //   var userTreats = _db.Treats.ToList();
-    //   return View(userTreats);
-    // }
 
     [Authorize]
     public ActionResult Create()
