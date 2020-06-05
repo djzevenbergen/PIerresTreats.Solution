@@ -6,14 +6,14 @@
 
 
 ## Description
-_This C#/.NET Core MVC application uses a MySQL databse to allow the user to create and store hair stylists and the clients for those stylists. It allows the user to see specific details about any stylist on click, and then allows the user to click on a client for details._
+_This C#/.NET Core MVC application uses a MySQL database to allow the user to add Treats and Flavors in a many-to-many relationship. It allows the user to see specific details about any flavor or treat for details about it and a list of all items belonging to the other class._
 
 
 ## Setup/Installation Requirements
 * Clone repository from GitHub in terminal or console
 * ensure that C#/.netcore2.2 is installed on your computer
 * ensure that mysql is installed on your computer
-* if you have mysql workbench, use administration>Data import/restore>import from self-contained file>HairSalon.Solution/david_zevenbergen.sql>start import
+* if you have mysql workbench, use administration>Data import/restore>import from self-contained file>PierresTreats.Solution/david_zevenbergen.sql>start import
 * if you don't have mysql workbench, here are the create statements:
 
 
@@ -53,53 +53,54 @@ _This C#/.NET Core MVC application uses a MySQL databse to allow the user to cre
         }
 
 * in the terminal navigate to the project's root directory
-* use "dotnet restore HairSalon"
-* navigate into HairSalon folder "cd HairSalon"
-* to start the application use "dotnet build" and "dotnet run"
+* use "dotnet restore PierresTreats"
+* navigate into PierresTreats folder "cd PierresTreats"
+* to start the application use "dotnet run"
 
 ## Specs
-1. User is presented with a homepage, and given the option to see go to the Stylists page
-  * Input: "Go to vendors page"
-  * Output: "/Stylists"
-2. User can create a new Stylist
-  * Input: "create new Stylist"
-  * Output: "/stylists/create
-3. User fills out stylist form and is redirected to now populated stylists page
-  * Input: "Jan" "Janison" "5555555555" "add stylist"
-  * Output: "/stylists/index" "Jan Janison"
-4. User can click on a Stylist to see details incl. all orders clients that that stylist has
-  * Input: "Click 'Jan Janison'"
-  * Output: "Jan Janison Details"
-            "First Name: Jan"
-            "Last Name: Janison"
-            "Phone Number: 5555555555"
-            "Client List"
-            "No clients yet!"
-            "Add client"
-            "Edit Stylist"
-            "Delete Stylist"
+1. User is presented with a homepage, and sees a table of all flavors and treats.
+   If there are none, the headers are clickable to take the user to a page to add treats/flavors
+   
+  * Input: click - "Flavors"
+  * Output: "/flavors/create"
+2. User is prompted to login in order to create new flavor
+  * Input: "Username" "Password"
+  * Output: "Welcome 'Username'" 
+            "Redirect to home"
+2. User can create a new flavor
+  * Input: "Flavor"
+  * Output: "/flavors/create"
+3. User fills out flavor form and is redirected to now populated home page
+  * Input: "Chocolate" "no treats to choose from yet!"
+  * Output: "/" "Treats"  "Flavors"
+                 none   |  Chocolate
+                        |
+                        |
+4. User can click on a flavor/treat to see details incl. all instances of the other class that belong to that class
+  * Input: "Click 'Chocolate'"
+  * Output: "Chocolate Details:"
+
+            "Treats List"
+            "No treats yet!"
             "Back to List"
-5. User can click Add Client on that stylist's page
-  * Input: "Add Client"
-  * Output: "/clients/create"
-6. User fills out a Client form and is then redirecte to the Stylist's page to whom that client was added" 
-  * Input: "Jim" "Johnson" "2222222222" "Jan" "add client"
-  * Output: "/vendors/details/{jan's id}"
 
-7. User can search for clients or stylists by first or last name
-  * Input: "jim" "clients" "search by first name" "search"
-  * Output: "Jim Johnson"
+          ~~Logged in users only~
+            "Add treat"
+            "Edit flavor"
+            "Delete Flavor"
+            
+5. User can click Add Treat on that flavor's page
+  * Input: "Add Treat"
+  * Output: "/treats/create"
+6. User fills out a Treat form and is then redirected to the home page" 
+  * Input: "Eclair" "Chocolate" "$2.00"
+  * Output: "/"
 
-8. User can click on clients for more details on either the Stylist's details page or from the search
-  * Input: "click jim johnson"
-  * Output: "Client Details"
-            "First Name: Jim"
-            "Last Name: Johnson"
-            "Phone Number: 2222222222"
-            "Stylist: Jan"
-            "edit client"
-            "delete this client"
-            "back to stylist"
+7. User can search for Flavors or Treats
+  * Input: "choc" "search by flavor" "search"
+  * Output: "Chocolate"
+
+8. All of this functionality could be executed on Flavors or Treats
 
 
 ## Support
