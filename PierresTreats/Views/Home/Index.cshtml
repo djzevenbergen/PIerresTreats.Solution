@@ -1,0 +1,75 @@
+
+@{
+  Layout = "_Layout";
+}
+
+@using Library.Models;
+@using System.Collections.Generic;
+
+@* @model List<Library.Models.Book>; *@
+
+<h1>Welcome to Pierre's!</h1>
+
+
+<div class="row">
+@if (Model["flavors"].Count == 0 && Model["treats"].Count == 0)
+{
+  <div class="col-m-6">
+    <h3>Flavors:</h3>
+    <p> No flavors yet!</p>
+  </div>
+    <div class="col-m-6">
+    <h3>Treats:</h3>
+    <p> No treats yet!</p>
+  </div>
+  
+} 
+else if (Model["flavors"].Count == 0)
+{
+  <div class="col-m-6">
+    <h3>Flavors:</h3>
+    <p> No flavors yet!</p>
+  </div>
+  <div class="col-m-6">
+    <ul>
+    @foreach (Treat treat in Model["treats"])
+    {
+      <li>@Html.ActionLink($"{treat.name} " , "Details", "Treats", new {id = treat.TreatId})</li>
+    }
+    </ul>
+  </div>
+} 
+else if (Model["treats"].Count == 0)
+{
+  <div class="col-m-6">
+    <ul>
+    @foreach (Flavor flavor in Model["flavors"])
+    {
+      <li>@Html.ActionLink($"{flavor.name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
+    }
+    </ul>
+  </div>
+  <div class="col-m-6">
+    <h3>Treats:</h3>
+    <p> No treats yet!</p>
+  </div>
+}
+else 
+{
+  <div class="col-m-6">
+    <ul>
+    @foreach (Flavor flavor in Model["flavors"])
+    {
+      <li>@Html.ActionLink($"{flavor.name} " , "Details", "Flavors", new {id = flavor.FlavorId})</li>
+    }
+    </ul>
+  </div>
+    <div class="col-m-6">
+    <ul>
+    @foreach (Treat treat in Model["treats"])
+    {
+      <li>@Html.ActionLink($"{treat.name} " , "Details", "Treats", new {id = treat.TreatId})</li>
+    }
+    </ul>
+  </div>
+}
