@@ -8,3 +8,18 @@
   <label for="searchParam">Search by Treat</label>
   <button type="submit">Search</button>
 </form>
+
+@using System.Security.Claims
+@using PierresTreats.Models
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Logged in as @User.Identity.Name!</p>
+    
+   <p>@Html.ActionLink("Log Off","LogOff", "Account", FormMethod.Post)</p> 
+
+}
+else
+{
+    <p>@Html.ActionLink("Register", "Register")</p>
+    <p>@Html.ActionLink("Log in", "Login")</p>
+}

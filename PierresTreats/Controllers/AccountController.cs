@@ -64,11 +64,17 @@ namespace PierresTreats.Controllers
       }
     }
 
-    [HttpPost]
-    public async Task<ActionResult> LogOff()
+
+    public ActionResult LogOff()
+    {
+      return View();
+    }
+
+    [HttpPost("/LogOffPost")]
+    public async Task<ActionResult> LogOffPost()
     {
       await _signInManager.SignOutAsync();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
   }
 }
