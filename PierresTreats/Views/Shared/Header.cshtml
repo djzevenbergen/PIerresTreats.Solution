@@ -1,3 +1,4 @@
+<div class = "jumbotron">
 <h1>Welcome to Pierre's!</h1>
 <form action="/search" method="get">
   <label for="search">Search</label>
@@ -8,7 +9,7 @@
   <label for="searchParam">Search by Treat</label>
   <button type="submit">Search</button>
 </form>
-
+</div>
 @using System.Security.Claims
 @using PierresTreats.Models
 @if (User.Identity.IsAuthenticated)
@@ -20,6 +21,6 @@
 }
 else
 {
-    <p>@Html.ActionLink("Register", "Register")</p>
-    <p>@Html.ActionLink("Log in", "Login")</p>
+    <p>@Html.ActionLink("Register", "Register", "Account")</p>
+    <p>@Html.ActionLink("Log in", "Login", "Account")</p>
 }
