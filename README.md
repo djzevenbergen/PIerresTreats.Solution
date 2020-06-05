@@ -1,6 +1,6 @@
 # _Pierres Treats_
 
-#### _MVC application for keeping track of treats and their flavors. 5/29/2020_
+#### _MVC application for keeping track of treats and their flavors. 6/5/2020_
 
 ### Made by DJ Zevenbergen
 
@@ -81,7 +81,7 @@ _Open an issue on github_
 
 
 ## Built With
-C#/ASP.NET Core 
+C#/ASP.NET Core, Entity, MySQL
 
 ### License
 This project is licensed under the MIT License
