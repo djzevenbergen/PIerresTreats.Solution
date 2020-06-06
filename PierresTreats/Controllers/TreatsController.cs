@@ -12,13 +12,12 @@ using System.Security.Claims;
 namespace PierresTreats.Controllers
 {
 
-  //new line
+
   public class TreatsController : Controller
   {
     private readonly PierresTreatsContext _db;
-    private readonly UserManager<ApplicationUser> _userManager; //new line
+    private readonly UserManager<ApplicationUser> _userManager; 
 
-    //updated constructor
     public TreatsController(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
     {
       _userManager = userManager;
@@ -32,7 +31,7 @@ namespace PierresTreats.Controllers
       return View();
     }
 
-    //updated Create post method
+
     [HttpPost, Authorize]
     public async Task<ActionResult> Create(Treat treat, int FlavorId)
     {
