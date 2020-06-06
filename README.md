@@ -79,6 +79,8 @@ _This C#/.NET Core MVC application uses a MySQL database to allow the user to ad
 ## Support
 _Open an issue on github_
 
+## Bugs 
+_Currently only working on my Mac_
 
 ## Built With
 C#/ASP.NET Core, Entity, MySQL
