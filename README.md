@@ -14,11 +14,11 @@ _This C#/.NET Core MVC application uses a MySQL database to allow the user to ad
 * ensure that C#/.netcore2.2 is installed on your computer
 * ensure that mysql is installed on your computer
 * create a file named "appsettings.json" in the PierresTreats folder
-* populate appsettings.json with the following text (making sure you use your port number, uid, and password):
+* populate appsettings.json with the following text (making sure you use your server, port number, uid, and password):
 
   {
     "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=david_zevenbergen;uid=root;pwd=epicodus;",
+      "DefaultConnection": "Server={servername};Port={port-number};database=david_zevenbergen;uid={your-uid};pwd={your-password};",
       "LibraryContextConnection": "Server=(localdb)\\mssqllocaldb;Database=david_zevenbergen;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
   }
